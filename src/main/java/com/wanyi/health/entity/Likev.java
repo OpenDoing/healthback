@@ -4,11 +4,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "likev")
+@IdClass(LikeKey.class)
 public class Likev {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Integer userId;
+    @Id
     private String category;
     private Integer count;
 

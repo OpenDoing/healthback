@@ -47,4 +47,9 @@ public class ArticleController {
     public Object getAll() {
         return ResponseUtil.ok(articleRepo.findAll());
     }
+
+    @GetMapping("/getBylevel")
+    public Object getBylevel(@RequestParam Integer level) {
+        return ResponseUtil.ok(articleRepo.findArticlesByLevelIsGreaterThan(level));
+    }
 }

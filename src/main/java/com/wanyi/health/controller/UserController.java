@@ -105,6 +105,8 @@ public class UserController {
         return ResponseUtil.ok(userRepo.findUserById(userId));
     }
 
+
+
     @GetMapping("/users")
     public Object getUsers() {
         return ResponseUtil.ok(userRepo.findAll());
