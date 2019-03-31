@@ -15,4 +15,6 @@ public interface FoodRepo extends JpaRepository<Food, Integer> {
     @Transactional
     @Query(value = "update food set food1= ?1 , food2=?2 , advice=?3, reason=?4 where id= ?5", nativeQuery = true)
     int updateFood( String food1,  String food2, String advice, String reason,Integer id);
+
+    Food findFoodByFood1AndFood2(String food1,String food2);
 }

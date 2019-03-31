@@ -36,6 +36,11 @@ public class FoodController {
     }
     //243497a2beb7f4f5a93f4fdad19c56234
 
+    @GetMapping("/local")
+    public Object getLocalFood(@RequestParam String food1,@RequestParam String food2) {
+        return ResponseUtil.ok(foodRepo.findFoodByFood1AndFood2(food1, food2));
+    }
+
     @PostMapping("/add")
     public Object addFood(@RequestBody Food food) {
         foodRepo.save(food);
